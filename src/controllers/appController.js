@@ -20,3 +20,11 @@ export const getContacts = (req, res) => {
     res.json(contact)
   })
 }
+
+export const getContactWithID = (req, res) => {
+  Contact.findById(req.params.contactId, (err, contact) => {
+    if (err) res.send(err)
+    
+    res.json(contact)
+  })
+}
