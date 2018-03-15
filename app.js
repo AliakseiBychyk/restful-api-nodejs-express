@@ -6,11 +6,9 @@ import routes from './src/routes/appRoutes'
 const app = express();
 const PORT = 8000;
 
-// mongoose connection
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/RESTdb')
 
-// bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 

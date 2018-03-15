@@ -7,26 +7,20 @@ import {
 } from "../controllers/appController";
 
 const routes = (app) => {
-  app.route('/contact')
-    // GET endpoint  
-    .get((req, res, next) => {
-      // middleware
+  app.route('/contact')    
+    .get((req, res, next) => {    
       console.log(`Request from: ${req.originalUrl}`)
       console.log(`Request type: ${req.method}`)
       next();
     }, getContacts)
 
-    // POST endpoint
     .post(addNewContact);
   
   app.route('/contact/:contactId')
-    // GET specific contact by ID
     .get(getContactWithID)
     
-    // PUT request
     .put(updateContact)
     
-    // DLETE request
     .delete(deleteContact); 
 }
 
