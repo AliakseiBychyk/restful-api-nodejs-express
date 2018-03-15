@@ -33,6 +33,6 @@ npm start
 
 ## How to send REST requests to api ##
 * There are two endpoints available for sending requests
-`/contact` (GET, POST) and `/contact/:contactId` (GET, PUT, DELETE)
+`/contact` (GET, POST) and `/contact/:contactId` (GET, PUT, DELETE), `:contactId` here is `_id` field from JSON.
 * The POST request should contain JSON data with mandatory fields: `firstName, lastName, email` also you can add `company` and `phone`.
 * You can use [Postman](https://www.getpostman.com/apps).
