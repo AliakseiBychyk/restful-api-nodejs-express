@@ -1,3 +1,7 @@
+![Hackage-Deps](https://img.shields.io/hackage-deps/v/lens.svg)
+[![Greenkeeper badge](https://badges.greenkeeper.io/AliakseiBychyk/restful-api-nodejs-express.svg)](https://greenkeeper.io/)
+![GitHub release](https://img.shields.io/github/release/AliakseiBychyk/restful-api-nodejs-express.svg)
+
 # Application for REST requests training #
 
 ## How to setup working environment ##
