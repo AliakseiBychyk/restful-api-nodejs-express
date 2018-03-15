@@ -22,7 +22,7 @@ mongo
 
 
 ## How to run app ##
-* Make sure your MongoDB server running (see above).
+* Make sure your MongoDB server running on port 27017 (see above).
 * Run application with:
 ```
 npm start
