@@ -3,15 +3,26 @@ import ContactSchema from '../models/appModel'
 
 const Contact = mongoose.model('Contact', ContactSchema)
 
-export const addNewContact = (req, res) => {
-  let newContact = new Contact(req.body)
-  
-  newContact.save((err, contact) => {
-    if (err) res.send(err)
-    
-    res.json(contact)
+const checkUser = (user, cb) => {
+  Contact.find({ email: user.email }, (err, contact) => {
+    if (!!contact.length) {
+      cb('User already exists', null)
+    } else {
+      user.save((err, contact) => {
+        cb(err, user)
+      })
+    }  
   })
 }
+
+export const addNewContact = (req, res) => {
+  let newContact = new Contact(req.body)
+  checkUser(newContact, (err, user) => {
+    if (err || !user) res.send(err)
+    res.json(user)
+  })
+}
+
 
 export const getContacts = (req, res) => {
   Contact.find({}, (err, contact) => {
@@ -30,7 +41,7 @@ export const getContactWithID = (req, res) => {
 }
 
 export const updateContact = (req, res) => {
-  Contact.findOneAndUpdate({ _id: req.params.contactId }, req.body, { new: true }, (err, contact) => {
+  Contact.findOneAndUpdate({ email: req.params.contactId }, req.body, { new: true }, (err, contact) => {
     if (err) res.send(err)
     
     res.json(contact)
@@ -38,7 +49,7 @@ export const updateContact = (req, res) => {
 }
 
 export const deleteContact = (req, res) => {
-  Contact.remove({ _id: req.params.contactId }, (err, contact) => {
+  Contact.remove({ email: req.params.contactId }, (err, contact) => {
     if (err) res.send(err)
 
     res.json({ message: 'Successfully deleted contact'})
