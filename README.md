@@ -32,11 +32,14 @@ mongo
 npm start
 ```
 * Node.js server will be running on localhost port 8000
-* Navigate to `http://localhost:8000/contact` in your browser.
+* Navigate to `http://localhost:8000/` in your browser.
 
 
 ## How to send REST requests to api ##
-* There are two endpoints available for sending requests
-`/contact` (GET, POST) and `/contact/:contactId` (GET, PUT, DELETE), `:contactId` here is `_id` field from JSON.
-* The POST request should contain JSON data with mandatory fields: `firstName, lastName, email` also you can add `company` and `phone`.
-* You can use [Postman](https://www.getpostman.com/apps).
+* Start from initial endpoint `'/'`
+* Feel free to experiment with various request types
+* Follow the instuctions in response messages
+* You can use [Postman](https://www.getpostman.com/apps) to execute requests.
+# Good luck in learning REST! #
+
+
