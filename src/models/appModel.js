@@ -23,9 +23,12 @@ const ContactSchema = new Schema({
   phone: {
     type: Number,
     validate: {
-      validator: (v) => (typof v === 'number'),
+      validator: (v) => (typeof v === 'number'),
       message: 'Phone should be a number'
     }
+  },
+  message: {
+    type: String
   },
   created_date: {
     type: Date,

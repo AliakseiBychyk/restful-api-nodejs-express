@@ -1,7 +1,7 @@
 import {
   addNewContact,
   getContacts,
-  getContactWithID,
+  getContactWithEmail,
   updateContact,
   deleteContact,
   findContactByEmail,
@@ -21,12 +21,12 @@ const routes = (app) => {
     })
     .post(addNewContact)
  
-  // app.route('/contact/:email')
-  //   .get(getContactWithID)
+  app.route('/:userEmail')
+    .get(getContactWithEmail)
     
-  //   .put(updateContact)
+    .put(updateContact)
     
-  //   .delete(deleteContact); 
+    .delete(deleteContact); 
 }
 
 export default routes;
