@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import config from './config'
+// import { testuserAddress } from './assets/mongodb.config'
 import routes from './src/routes/appRoutes'
 
 const app = express();
@@ -9,7 +10,7 @@ const PORT = config.port;
 
 mongoose.Promise = global.Promise
 mongoose.connect(config.mongodbUri, (err) => {
-  if (err) console.log('There was a db connection error')
+  if (err) return console.log('There was a db connection error')
   console.log('Successfully connected to MongoDB Atlas')
 })
 
