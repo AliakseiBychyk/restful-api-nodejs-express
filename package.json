@@ -4,7 +4,7 @@
   "description": "Training Quest for REST Requests",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./app.js --exec babel-node -e js"
+    "start": "nodemon ./app.js --exec babel-node -e js --ignore public/"
   },
   "author": "Aliaksei Bychyk",
   "license": "ISC",
