@@ -1,7 +1,7 @@
 {
   "name": "restful-api-nodejs-express",
-  "version": "1.0.0",
-  "description": "Training project to build RESTful API with Node.js and Express",
+  "version": "0.0.2",
+  "description": "Training Quest for REST Requests",
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./app.js --exec babel-node -e js"
