@@ -30,5 +30,4 @@ app.get('/', (req, res) =>
 
 app.listen(PORT, () =>
   console.log(`Your server is running on port ${PORT}`)
-  console.log(`your host is ${config.host}`)
 );
