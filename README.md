@@ -2,7 +2,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/AliakseiBychyk/restful-api-nodejs-express.svg)](https://greenkeeper.io/)
 ![GitHub release](https://img.shields.io/github/release/AliakseiBychyk/restful-api-nodejs-express.svg)
 
-# Application for REST requests training #
+# Training Quest for REST Requests #
 
 ## How to setup working environment ##
 * Download and install the latest [Node.js](https://nodejs.org/en/download/).
@@ -35,7 +35,7 @@ npm start
 * Navigate to `http://localhost:8000/` in your browser.
 
 
-## How to send REST requests to api ##
+## How to start training REST quest ##
 * Start from initial endpoint `'/'`
 * Feel free to experiment with various request types
 * Follow the instuctions in response messages
