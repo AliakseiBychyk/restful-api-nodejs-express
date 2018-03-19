@@ -13,15 +13,16 @@ mongoose.connect(config.mongodbUri)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-app.set('view engine', 'ejs')
-app.use(express.static('public'))
+// app.set('view engine', 'ejs')
+// app.use(express.static('public'))
 
 routes(app);
 
 app.get('/', (req, res) =>
-  res.render('index', {
-    content: `Node and express server is running on port ${PORT}`
-  })  
+  // res.render('index', {
+  //   content: `Node and express server is running on port ${PORT}`
+  // })  
+  res.send(`Node and express server is running on port ${PORT}`)
 );
 
 app.listen(PORT, () =>
