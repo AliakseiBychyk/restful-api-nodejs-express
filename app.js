@@ -8,7 +8,10 @@ const app = express();
 const PORT = config.port;
 
 mongoose.Promise = global.Promise
-mongoose.connect(config.mongodbUri)
+mongoose.connect(config.mongodbUri, (err) => {
+  if (err) console.log('There was a db connection error')
+  console.log('Successfully connected to MongoDB Atlas')
+})
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -27,4 +30,5 @@ app.get('/', (req, res) =>
 
 app.listen(PORT, () =>
   console.log(`Your server is running on port ${PORT}`)
+  console.log(`your host is ${config.host}`)
 );
