@@ -1,6 +1,6 @@
 ![Hackage-Deps](https://img.shields.io/hackage-deps/v/lens.svg)
 [![Greenkeeper badge](https://badges.greenkeeper.io/AliakseiBychyk/restful-api-nodejs-express.svg)](https://greenkeeper.io/)
-![GitHub release](https://img.shields.io/github/release/AliakseiBychyk/restful-api-nodejs-express.svg)
+![[GitHub release](https://img.shields.io/github/release/AliakseiBychyk/restful-api-nodejs-express.svg)](https://github.com/AliakseiBychyk/restful-api-nodejs-express/releases/latest)
 
 # Training Quest for REST Requests #
 
