@@ -52,7 +52,8 @@ export const postEmptyBody = (req, res) => {
 }
 
 export const updateContact = (req, res) => {
-  Contact.findOneAndUpdate({ email: req.params.userEmail }, req.body, { new: true }, (err, contact) => {
+  const message = 'Delete company from your contact'
+  Contact.findOneAndUpdate({ email: req.params.userEmail }, { ...req.body, message }, { new: true }, (err, contact) => {
     if (err) res.send(err)
     
     res.json(contact)
