@@ -4,6 +4,17 @@ import ContactSchema from '../models/appModel'
 const Contact = mongoose.model('Contact', ContactSchema)
 
 //    '/' endpoint    
+export const getInitialResponse = (req, res) => {
+  if (!req.query.email) {
+    res.send('Please execute request with your email in query')
+  } else if (!!req.query.email) {
+    res.send(`
+      Create a user with mandatory email field \n
+      if your user exists -> navigate to your user endpoit '/:yourEmail'
+    `)
+  }
+}
+
 const checkUser = (user, cb) => {
   Contact.find({ email: user.email }, (err, contact) => {
     if (!!contact.length) {
