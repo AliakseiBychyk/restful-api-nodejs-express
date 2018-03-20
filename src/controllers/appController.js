@@ -28,7 +28,7 @@ const checkUser = (user, cb) => {
 }
 
 export const addNewContact = (req, res) => {
-  const message = 'Add firstName, lastName, company and phone to your contact' 
+  const message = 'Add firstName, lastName, company and phone to your contact'
   let newContact = new Contact({ ...req.body, message })
   checkUser(newContact, (err, user) => {
     if (err || !user) return res.json({status: 500, error: err})
@@ -53,7 +53,8 @@ export const postEmptyBody = (req, res) => {
 
 export const updateContact = (req, res) => {
   const message = 'Delete company from your contact'
-  Contact.findOneAndUpdate({ email: req.params.userEmail }, { ...req.body, message }, { new: true }, (err, contact) => {
+  const newContact = !!req.body.company ? { ...req.body, message } : req.body
+  Contact.findOneAndUpdate({ email: req.params.userEmail }, newContact, { new: true }, (err, contact) => {
     if (err) res.send(err)
     
     res.json(contact)
