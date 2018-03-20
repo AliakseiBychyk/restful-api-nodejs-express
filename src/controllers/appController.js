@@ -47,6 +47,10 @@ export const getContactWithEmail = (req, res) => {
   })
 }
 
+export const postEmptyBody = (req, res) => {
+  res.send('Place your email to the request body and post it in appropriate endpoint')
+}
+
 export const updateContact = (req, res) => {
   Contact.findOneAndUpdate({ email: req.params.userEmail }, req.body, { new: true }, (err, contact) => {
     if (err) res.send(err)
