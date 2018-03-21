@@ -23,7 +23,7 @@ const ContactSchema = new Schema({
   phone: {
     type: Number,
     validate: {
-      validator: (v) => (typeof v === 'number'),
+      validator: (v) => /[\d ]+/.test(v),
       message: 'Phone should be a number'
     }
   },
