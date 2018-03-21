@@ -21,10 +21,10 @@ const ContactSchema = new Schema({
     type: String
   },
   phone: {
-    type: String,
+    type: Number,
     validate: {
-      validator: (v) => /^[\d ]+$/g.test(v),
-      message: 'Phone should contain only numbers and spaces'
+      validator: (v) => (typeof v === 'number'),
+      message: 'Phone should be a number'
     }
   },
   message: {
